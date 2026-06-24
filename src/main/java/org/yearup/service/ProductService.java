@@ -30,13 +30,16 @@ public class ProductService
                        .toList();
     }
 
+    // this method returns all the products that belong to the category
     public List<Product> listByCategoryId(int categoryId)
     {
+        //
         return productRepository.findByCategoryId(categoryId);
     }
-
+     // this method gets a product using its id.
     public Product getById(int productId)
     {
+        //the repository method to search the database for a product with the matching id(if not found it will return null.
         return productRepository.findById(productId).orElse(null);
     }
 
