@@ -18,15 +18,20 @@ public class ProductService
 
     public List<Product> search(Integer categoryId, Double minPrice, Double maxPrice, String subCategory)
     {
+        //
         List<Product> products = categoryId != null
                 ? productRepository.findByCategoryId(categoryId)
                 : productRepository.findAll();
 
         return products.stream()
+                            // this filters products minimum price.
                        .filter(p -> minPrice == null || p.getPrice() >= minPrice)
+                           // this filters products maximum price.
                        .filter(p -> maxPrice == null || p.getPrice() <= maxPrice)
+                            // this filter only shows products from the selected subcategory.
                        .filter(p -> subCategory == null || subCategory.equalsIgnoreCase(p.getSubCategory()))
-                       .filter(Product::isFeatured)
+                  // This filter was saying it is only showing featured products, once I deleted it, a lot more products showed up
+                      // .filter(Product::isFeatured)
                        .toList();
     }
 
