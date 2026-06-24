@@ -18,4 +18,18 @@ public class ProfileService
     {
         return profileRepository.save(profile);
     }
+    // Gets a profile using the user id
+    public Profile getById(int userId)
+    {
+        //looks for the user's profile in the database.
+        return profileRepository.findById(userId)
+                .orElse(null);
+    }
+    //update the user id
+    public Profile update(int userId, Profile profile)
+    {
+        // this will save the changes
+        profile.setUserId(userId);
+        return profileRepository.save(profile);
+    }
 }
