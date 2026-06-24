@@ -64,6 +64,8 @@ public class ProductService
         existing.setSubCategory(product.getSubCategory());
         existing.setFeatured(product.isFeatured());
         existing.setImageUrl(product.getImageUrl());
+        // added a stock so the product quantity updates.
+        existing.setStock(product.getStock());
         return productRepository.save(existing);
     }
 
