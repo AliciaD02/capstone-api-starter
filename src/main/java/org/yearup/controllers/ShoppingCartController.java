@@ -1,11 +1,22 @@
 package org.yearup.controllers;
-
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.yearup.models.ShoppingCart;
 import org.yearup.models.User;
 import org.yearup.service.ShoppingCartService;
 import org.yearup.service.UserService;
 
 import java.security.Principal;
+// this tells the spring this class handles api request
+@RestController
+// endpoint starts /cart
+@RequestMapping("/cart")
+// allows the frontend to call these endpoints
+@CrossOrigin
+@PreAuthorize("isAuthenticated()")
 
 // convert this class to a REST controller
 // only logged in users should have access to these actions
@@ -15,19 +26,29 @@ public class ShoppingCartController
     private ShoppingCartService shoppingCartService;
     private UserService userService;
 
+    // this constructor connects the shoppingcartservice and userservice to this controller
+    public ShoppingCartController(ShoppingCartService shoppingCartService, UserService userService) {
 
 
+        this.shoppingCartService = shoppingCartService;
+        this.userService = userService;
+    }
+
+// gets the shopping cart for the user who is logged in
+    @GetMapping
     // each method in this controller requires a Principal object as a parameter
     public ShoppingCart getCart(Principal principal)
     {
         // get the currently logged in username
         String userName = principal.getName();
+
         // find database user by username
         User user = userService.getByUserName(userName);
+        // gets the user's id
         int userId = user.getId();
 
         // use the shoppingCartService to get all items in the cart and return the cart
-        return null;
+        return shoppingCartService.getByUserId(userId);
     }
 
     // add a POST method to add a product to the cart - the url should be
