@@ -73,6 +73,7 @@ public class ProductService
         existing.setFeatured(product.isFeatured());
         existing.setImageUrl(product.getImageUrl());
         // added a stock so the product quantity updates.
+        // other bug, stock was not updating because the stock setter was missing. then stock value updated correctly
         existing.setStock(product.getStock());
         return productRepository.save(existing);
     }
