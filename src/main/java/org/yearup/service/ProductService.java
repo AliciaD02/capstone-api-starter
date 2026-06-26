@@ -9,13 +9,14 @@ import java.util.List;
 @Service
 public class ProductService
 {
+    ////We need to be able to communicate with the repository in order to communicate with the database
     private final ProductRepository productRepository;
 
     public ProductService(ProductRepository productRepository)
     {
         this.productRepository = productRepository;
     }
-
+//this method searches for products using optional filters.
     public List<Product> search(Integer categoryId, Double minPrice, Double maxPrice, String subCategory)
     {
         //
