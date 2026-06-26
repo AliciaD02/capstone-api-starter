@@ -13,18 +13,16 @@ import org.springframework.web.bind.annotation.PostMapping;
 import java.util.List;
 
 
-// add the annotation to make this controller the endpoint for the following url
-    // http://localhost:8080/categories
-// add annotation to allow cross site origin requests
-
 // add the annotations to make this a REST controller (this class handles request from user
 @RestController
+// add the annotation to make this controller the endpoint for the following url
 @RequestMapping("/categories")
+// add annotation to allow cross site with different origin requests (allows front end to communicate with back end)
 @CrossOrigin
 public class CategoriesController
 {
     private CategoryService categoryService;
-
+    // create an Autowired constructor to inject the categoryService and productService
     public CategoriesController(CategoryService categoryService, ProductService productService) {
         this.categoryService = categoryService;
         this.productService = productService;
@@ -33,7 +31,7 @@ public class CategoriesController
     private ProductService productService;
 
 
-    // create an Autowired constructor to inject the categoryService and productService
+
 
     // add the appropriate annotation for a get action
 
