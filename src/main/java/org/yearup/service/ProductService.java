@@ -42,6 +42,7 @@ public class ProductService
         //
         return productRepository.findByCategoryId(categoryId);
     }
+
      // this method gets a product using its id.
     public Product getById(int productId)
     {
