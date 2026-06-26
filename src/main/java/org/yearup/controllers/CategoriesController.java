@@ -32,11 +32,7 @@ public class CategoriesController
 
 
 
-
-    // add the appropriate annotation for a get action
-
-
-    //
+   // handles the get requests and the method returns a list of categories.
     @GetMapping
     public List<Category> getAll()
     {
@@ -46,12 +42,14 @@ public class CategoriesController
     // add the appropriate annotation for a get action
 
     @GetMapping("{id}")
+    //Path variable gets the user's selection from the URL and stores it in a variable.
+    // Then the service uses that value to find category in the database.
     public Category getById(@PathVariable int id)
     {
         return categoryService.getById(id);
     }
-    // the url to return all products in category 1 would look like this
-    // https://localhost:8080/categories/1/products
+
+
 
     @GetMapping("{categoryId}/products")
     public List<Product> getProductsById(@PathVariable int categoryId)
@@ -60,11 +58,11 @@ public class CategoriesController
         return productService.listByCategoryId(categoryId);
     }
 
-    // add annotation to call this method for a POST action
-    // add annotation to ensure that only an ADMIN can call this function
 
+    // add annotation to call this method for a POST action
 
     @PostMapping
+    // add annotation to ensure that only an ADMIN can call this function
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     // @requestBody lets us receive the category information that the user is sending.
     public ResponseEntity<Category> addCategory(@RequestBody Category category)
