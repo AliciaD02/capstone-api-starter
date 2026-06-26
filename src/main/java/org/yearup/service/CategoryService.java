@@ -19,7 +19,7 @@ public class CategoryService
     }
 
 
-    // this method will return a list of the categories from the database.
+    // this method will return a list of the categories from the database. Using find all
     public List<Category> getAllCategories()
     {
         //.findAll() gets all the categories from the database.
