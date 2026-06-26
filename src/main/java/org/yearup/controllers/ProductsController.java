@@ -16,11 +16,12 @@ import java.util.List;
 public class ProductsController
 {
     private final ProductService productService;
-
+// spring auto provides the product service so the controller can use it
     public ProductsController(ProductService productService)
     {
         this.productService = productService;
     }
+
 
     @GetMapping("")
     @PreAuthorize("permitAll()")
