@@ -29,6 +29,7 @@ public class CategoryService
     public Category getById(int categoryId)
     {
         // get category by id
+        // if not return null
         return categoryRepository.findById(categoryId)
                 .orElse(null);
     }
