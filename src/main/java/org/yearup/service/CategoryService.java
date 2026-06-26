@@ -9,7 +9,9 @@ import java.util.List;
 @Service
 public class CategoryService
 {
+    //We need to be able to communicate with the repository in order to communicate with the database
     private final CategoryRepository categoryRepository;
+
 
     public CategoryService(CategoryRepository categoryRepository)
     {
