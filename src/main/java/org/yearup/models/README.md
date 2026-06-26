@@ -33,3 +33,36 @@ Add products to the cart.
 Update the quantity of products already in the cart.
 Remove all items from the shopping cart.
 Automatically calculate the total price of the shopping cart.
+
+Testing
+Tested all endpoints using Insomnia.
+Verified CRUD operations and authentication.
+Fixed bugs by testing and debugging each endpoint individually.
+Technologies Used
+Java 17
+Spring Boot
+Spring Security
+Spring Data JPA
+MySQL
+Maven
+IntelliJ IDEA
+Insomnia
+Git
+GitHub
+Project Structure
+
+The project follows Spring Boot's layered architecture.
+
+Controllers
+
+Controllers receive HTTP requests from the client and return responses after communicating with the service layer.
+
+Classes I worked on:
+
+CategoriesController
+ProductsController
+ProfileController
+ShoppingCartController
+Services
+
+Services contain the application's business logi
