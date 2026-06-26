@@ -65,4 +65,52 @@ ProfileController
 ShoppingCartController
 Services
 
-Services contain the application's business logi
+Services contain the application's business logic and communicate with the repositories.
+
+Classes I worked on:
+
+CategoryService
+ProductService
+ProfileService
+ShoppingCartService
+UserService
+Repositories
+
+Repositories communicate directly with the MySQL database using Spring Data JPA.
+
+Classes I worked on:
+
+ProfileRepository
+ShoppingCartRepository
+Models
+
+Models represent the application's data and database tables.
+
+Classes I worked on:
+
+Profile
+ShoppingCart
+ShoppingCartItem
+CartItem
+Challenges
+
+One of the biggest challenges during this project was learning how each layer of a Spring Boot application works together. At first it was difficult to understand the responsibilities of controllers, services, repositories, and models, but after building new features and fixing bugs, I became much more comfortable with the overall architecture.
+
+Another challenge was debugging issues throughout the application. I fixed problems with product filtering, completed the User Profile feature, and implemented the Shopping Cart feature by creating GET, POST, PUT, and DELETE endpoints. I also learned how to use Insomnia to test each endpoint, which helped me find and solve issues much faster.
+
+What I Learned
+
+This capstone helped me better understand how a full Spring Boot application is built. I learned how to create REST API endpoints, organize code using controllers, services, repositories, and models, and work with Spring Security and JWT authentication. I also became more confident using MySQL, testing APIs with Insomnia, debugging errors, and understanding why the code works instead of only focusing on making it run.
+
+Future Improvements
+
+If I continue working on this project, I would like to:
+
+Complete the Checkout feature.
+Improve validation and error handling.
+Add unit and integration tests.
+Improve the frontend user experience.
+Add order history for users.
+Author
+
+Alicia Diaz
