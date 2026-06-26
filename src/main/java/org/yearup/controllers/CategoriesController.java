@@ -91,9 +91,11 @@ public class CategoriesController
     @DeleteMapping("{id}")
     @PreAuthorize("hasRole('ROLE_ADMIN')")
     public ResponseEntity<Void> deleteCategory(@PathVariable int id)
+
     {
         // delete the category by id and return status 204 No Content
         if (categoryService.getById(id) == null)
+            // response will be not found
             throw new ResponseStatusException(HttpStatus.NOT_FOUND);
 
         categoryService.delete(id);
