@@ -18,3 +18,18 @@ Price range
 Color (Subcategory)
 Featured products
 View individual product information.
+Category Management (Admin)
+View all categories.
+Create a new category.
+Update an existing category.
+Delete a category.
+User Profile
+View the currently logged-in user's profile.
+Update profile information, including name, email, phone number, and address.
+Uses the logged-in user's token to retrieve the correct profile.
+Shopping Cart
+View the current user's shopping cart.
+Add products to the cart.
+Update the quantity of products already in the cart.
+Remove all items from the shopping cart.
+Automatically calculate the total price of the shopping cart.
